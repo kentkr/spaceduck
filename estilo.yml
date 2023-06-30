@@ -2,7 +2,7 @@ name: 'spaceduck'
 version: '1.0.0'
 license: 'MIT'
 author: 'Guillermo Rodriguez'
-url: 'https://github.com/pineapplegiant/spaceduck'
+url: 'https://github.com/kentkr/spaceduck'
 description: 'An intergalactic space theme for Vim, Terminal & more!'
 colorschemes:
   - name: 'spaceduck'
