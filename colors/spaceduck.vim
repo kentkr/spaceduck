@@ -44,6 +44,7 @@ hi EndOfBuffer guifg=#30365F ctermfg=237 guibg=#0f111b ctermbg=233 gui=NONE cter
 hi link TermCursor Cursor
 hi ErrorMsg guifg=#e33400 ctermfg=166 guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 hi VertSplit guifg=#000000 ctermfg=0 guibg=#000000 ctermbg=0 gui=NONE cterm=NONE
+hi link WinSeparator VertSplit
 hi Folded guifg=#686f9a ctermfg=60 guibg=#0f111b ctermbg=233 gui=NONE cterm=NONE
 hi FoldColumn guifg=#30365F ctermfg=237 guibg=#0f111b ctermbg=233 gui=NONE cterm=NONE
 hi SignColumn guifg=#30365F ctermfg=237 guibg=#0f111b ctermbg=233 gui=NONE cterm=NONE
@@ -287,6 +288,24 @@ let s:colors = {
 \}
 " color specific changes
 function! HighContrast()
+    " general
+    execute 'hi @variable guifg=' . s:colors.purple2
+    " errors
+    execute 'hi CocErrorSign guibg=NONE guifg=' . s:colors.red
+    execute 'hi CocUnderlineError guisp=' . s:colors.red
+    execute 'hi CocErrorHighlight gui=undercurl guisp=' . s:colors.red
+    execute 'hi FgCocErrorFloatBgCocFloating guifg=' . s:colors.red
+    " warning
+    execute 'hi CocWarningSign guifg=' . s:colors.yellow
+    execute 'hi CocUnderlineWarning gui=underline guifg=' . s:colors.yellow
+    execute 'hi FgCocWarningFloatBgCocFloating guifg=' . s:colors.yellow
+    " hints
+    execute 'hi Conceal guifg=' . s:colors.dark_purple2
+    execute 'hi CocHintSign guifg=' . s:colors.dark_purple2
+    execute 'hi CocHintHighlight gui=underline guifg=' . s:colors.dark_purple2
+    execute 'hi FgCocHintFloatBgCocFloating guifg=' . s:colors.dark_purple2
+
+
     " python
     execute 'hi Comment guifg=' . s:colors.dark_purple
     execute 'hi String guifg=' . s:colors.cyan
@@ -309,6 +328,7 @@ function! HighContrast()
     execute 'hi @parameter.python guifg=' . s:colors.purple
     execute 'hi @variable.builtin.python guifg=' . s:colors.orange
     execute 'hi pythonExceptions guifg=' . s:colors.red
+    execute 'hi @type.builtin.python gui=italic guifg=' . s:colors.dark_purple2
 
     " sql
     execute 'hi @keyword.sql guifg=' . s:colors.green
