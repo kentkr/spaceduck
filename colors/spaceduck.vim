@@ -307,7 +307,6 @@ function! HighContrast()
     execute 'hi CocHintHighlight gui=underline guifg=' . s:colors.dark_purple2
     execute 'hi FgCocHintFloatBgCocFloating guifg=' . s:colors.dark_purple2
 
-
     " python
     execute 'hi Comment guifg=' . s:colors.dark_purple
     execute 'hi String guifg=' . s:colors.cyan
@@ -354,6 +353,9 @@ function! HighContrast()
     execute 'hi NERDTreeClosable guifg=' . s:colors.orange
     execute 'hi NERDTreeDirSlash guifg=' . s:colors.cyan
     execute 'hi NERDTreeFile guifg=' . s:colors.foreground
+
+    " yaml
+    execute 'hi @field.yaml guifg=' . s:colors.purple2
 endfunction
 
 " updated default
