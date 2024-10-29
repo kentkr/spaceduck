@@ -290,6 +290,8 @@ let s:colors = {
 function! HighContrast()
     " general
     execute 'hi @variable guifg=' . s:colors.purple2
+    execute 'hi Search guifg=' . s:colors.background ' guibg=' . s:colors.purple
+    execute 'hi CurSearch guifg=' . s:colors.background ' guibg=' . s:colors.green
     " errors
     execute 'hi CocErrorSign guibg=NONE guifg=' . s:colors.red
     execute 'hi CocUnderlineError guisp=' . s:colors.red
