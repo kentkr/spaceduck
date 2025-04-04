@@ -286,6 +286,7 @@ let s:colors = {
     \ 'background': '#0f111b',
     \ 'foreground': '#ecf0c1'
 \}
+
 " color specific changes
 function! HighContrast()
     " general
@@ -404,4 +405,104 @@ function! UpdatedDefault()
     execute 'hi NERDTreeDirSlash guifg=' . s:colors.cyan
 endfunction
 
-call HighContrast()
+" color specific changes
+function! Light()
+    " general
+    execute 'hi @variable guifg=' . s:colors.foreground
+    execute 'hi Search guifg=' . s:colors.background ' guibg=' . s:colors.purple
+    execute 'hi CurSearch guifg=' . s:colors.background ' guibg=' . s:colors.green
+    execute 'hi Comment guifg=' . s:colors.dark_purple
+    execute 'hi String guifg=' . s:colors.cyan
+    execute 'hi Function guifg=' . s:colors.purple
+    execute 'hi Keyword guifg=' . s:colors.green
+    execute 'hi Identifier guifg=' . s:colors.foreground
+    execute 'hi Type guifg=' . s:colors.dark_purple2
+    execute 'hi Constant guifg=' . s:colors.foreground
+    execute 'hi Error guifg=' . s:colors.foreground
+    execute 'hi Include guifg=' . s:colors.foreground
+    execute 'hi Repeat guifg=' . s:colors.green
+    execute 'hi Special guifg=' . s:colors.yellow
+    execute 'hi Operator guifg=' . s:colors.foreground
+    execute 'hi Number guifg=' . s:colors.foreground
+    execute 'hi Exception guifg=' . s:colors.foreground
+    execute 'hi Conditional guifg=' . s:colors.green
+    execute 'hi Delimiter guifg=' . s:colors.green
+
+    " test general
+    execute 'hi @attribute guifg=' . s:colors.foreground
+    execute 'hi @type guifg=' . s:colors.dark_purple2
+    execute 'hi @parameter guifg=' . s:colors.foreground
+    execute 'hi @variable.builtin guifg=' . s:colors.orange
+    execute 'hi pythonExceptions guifg=' . s:colors.foreground
+    execute 'hi @type.builtin gui=italic guifg=' . s:colors.orange
+    execute 'hi @variable guifg=' s:colors.foreground
+    execute 'hi @method.call guifg=' s:colors.purple
+    execute 'hi @operator guifg=' s:colors.magenta
+    execute 'hi @field guifg=' s:colors.purple
+    execute 'hi @attribute guifg=' s:colors.cyan
+    execute 'hi @function.builtin guifg=' s:colors.orange
+    execute 'hi @include guifg=' s:colors.purple2
+    execute 'hi @constructor guifg=' s:colors.yellow
+
+    " errors
+    execute 'hi CocErrorSign guibg=NONE guifg=' . s:colors.red
+    execute 'hi CocUnderlineError guisp=' . s:colors.red
+    execute 'hi CocErrorHighlight gui=undercurl guisp=' . s:colors.red
+    execute 'hi FgCocErrorFloatBgCocFloating guifg=' . s:colors.red
+    " warning
+    execute 'hi CocWarningSign guifg=' . s:colors.yellow
+    execute 'hi CocUnderlineWarning gui=underline guifg=' . s:colors.yellow
+    execute 'hi FgCocWarningFloatBgCocFloating guifg=' . s:colors.yellow
+    " hints
+    execute 'hi Conceal guifg=' . s:colors.dark_purple2
+    execute 'hi CocHintSign guifg=' . s:colors.dark_purple
+    execute 'hi CocHintHighlight gui=underline guifg=' . s:colors.dark_purple
+    execute 'hi FgCocHintFloatBgCocFloating guifg=' . s:colors.dark_purple2
+
+    " python
+    execute 'hi @attribute.python guifg=' . s:colors.foreground
+    execute 'hi @type.python guifg=' . s:colors.dark_purple2
+    execute 'hi @parameter.python guifg=' . s:colors.foreground
+    execute 'hi @variable.builtin.python guifg=' . s:colors.orange
+    execute 'hi pythonExceptions guifg=' . s:colors.foreground
+    execute 'hi @type.builtin.python gui=italic guifg=' . s:colors.orange
+    execute 'hi @variable.python guifg=' s:colors.foreground
+    execute 'hi @method.call.python guifg=' s:colors.purple
+    execute 'hi @operator.python guifg=' s:colors.magenta
+    execute 'hi @field.python guifg=' s:colors.purple
+    execute 'hi @attribute.python guifg=' s:colors.cyan
+    execute 'hi @function.builtin.python guifg=' s:colors.orange
+    execute 'hi @include.python guifg=' s:colors.purple2
+    execute 'hi @constructor.python guifg=' s:colors.yellow
+
+    " sql
+    execute 'hi @keyword.sql guifg=' . s:colors.green
+    execute 'hi @type.sql guifg=' . s:colors.purple
+    execute 'hi @field.sql guifg=' . s:colors.purple2
+    execute 'hi @variable.sql guifg=' . s:colors.purple2
+    execute 'hi @type.builtin.sql guifg=' . s:colors.orange
+
+    " vim
+    execute 'hi @type.vim guifg=' . s:colors.orange
+
+    " html
+    execute 'hi htmlTag guifg=' . s:colors.green
+    execute 'hi htmlEndTag guifg=' . s:colors.green
+    execute 'hi htmlTagName guifg=' . s:colors.green
+    execute 'hi htmlArg guifg=' . s:colors.purple
+
+    " NERDTree
+    execute 'hi NERDTreeDir guifg=' . s:colors.cyan
+    execute 'hi NERDTreeOpenable guifg=' . s:colors.cyan
+    execute 'hi NERDTreeClosable guifg=' . s:colors.orange
+    execute 'hi NERDTreeDirSlash guifg=' . s:colors.cyan
+    execute 'hi NERDTreeFile guifg=' . s:colors.foreground
+
+    " yaml
+    execute 'hi @field.yaml guifg=' . s:colors.purple2
+
+    " ibl
+    execute 'hi IblScope guifg=' s:colors.purple
+endfunction
+
+call Light()
