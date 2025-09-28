@@ -417,13 +417,13 @@ function! Light()
     execute 'hi Keyword guifg=' . s:colors.green
     execute 'hi Identifier guifg=' . s:colors.foreground
     execute 'hi Type guifg=' . s:colors.dark_purple2
-    execute 'hi Constant guifg=' . s:colors.foreground
+    execute 'hi Constant guifg=' . s:colors.yellow
     execute 'hi Error guifg=' . s:colors.foreground
     execute 'hi Include guifg=' . s:colors.foreground
     execute 'hi Repeat guifg=' . s:colors.green
     execute 'hi Special guifg=' . s:colors.yellow
     execute 'hi Operator guifg=' . s:colors.foreground
-    execute 'hi Number guifg=' . s:colors.foreground
+    execute 'hi Number guifg=' . s:colors.yellow
     execute 'hi Exception guifg=' . s:colors.foreground
     execute 'hi Conditional guifg=' . s:colors.green
     execute 'hi Delimiter guifg=' . s:colors.green
@@ -443,6 +443,7 @@ function! Light()
     execute 'hi @function.builtin guifg=' s:colors.orange
     execute 'hi @include guifg=' s:colors.purple2
     execute 'hi @constructor guifg=' s:colors.yellow
+    execute 'hi @exception guifg=' . s:colors.magenta
 
     " errors
     execute 'hi CocErrorSign guibg=NONE guifg=' . s:colors.red
