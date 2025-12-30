@@ -73,8 +73,8 @@ hi link StatusLineNC StatusLineTermNC
 hi TabLine guifg=#000000 ctermfg=0 guibg=#818596 ctermbg=102 gui=NONE cterm=NONE
 hi TabLineFill guifg=#818596 ctermfg=102 guibg=#000000 ctermbg=0 gui=NONE cterm=NONE
 hi TabLineSel guifg=#c1c3cc ctermfg=251 guibg=#0f111b ctermbg=233 gui=NONE cterm=NONE
-hi Visual guifg=NONE ctermfg=NONE guibg=#1b1c36 ctermbg=234 gui=NONE cterm=NONE
-hi link VisualNOS Visual
+"hi Visual guifg=#f7f0f0 ctermfg=NONE guibg=#1b1c36 ctermbg=234 gui=NONE cterm=NONE
+"hi link VisualNOS Visual
 hi WarningMsg guifg=#e39400 ctermfg=172 guibg=#0f111b ctermbg=233 gui=NONE cterm=NONE
 hi WildMenu guifg=#000000 ctermfg=0 guibg=#c1c3cc ctermbg=251 gui=NONE cterm=NONE
 hi link Whitespace EndOfBuffer
@@ -281,6 +281,7 @@ let s:colors = {
     \ 'purple2': '#7a5ccc',
     \ 'dark_purple': '#30365F',
     \ 'dark_purple2': '#686f9a',
+    \ 'grey_purple': '#1b1c36',
     \ 'cyan': '#00a3cc',
     \ 'magenta': '#ce6f8f',
     \ 'background': '#0f111b',
@@ -409,8 +410,10 @@ endfunction
 function! Light()
     " general
     execute 'hi @variable guifg=' . s:colors.foreground
-    execute 'hi Search guifg=' . s:colors.background ' guibg=' . s:colors.purple
-    execute 'hi CurSearch guifg=' . s:colors.background ' guibg=' . s:colors.green
+    execute 'hi Visual guibg=' . s:colors.grey_purple
+    hi link VisualNOS Visual
+    execute 'hi Search guifg=' . s:colors.purple ' guibg=' . s:colors.background . ' gui=reverse'
+    execute 'hi CurSearch guifg=' . s:colors.green ' guibg=' . s:colors.background . ' gui=reverse'
     execute 'hi Comment guifg=' . s:colors.dark_purple
     execute 'hi String guifg=' . s:colors.cyan
     execute 'hi Function guifg=' . s:colors.purple
@@ -450,6 +453,7 @@ function! Light()
     execute 'hi CocUnderlineError guisp=' . s:colors.red
     execute 'hi CocErrorHighlight gui=undercurl guisp=' . s:colors.red
     execute 'hi FgCocErrorFloatBgCocFloating guifg=' . s:colors.red
+    execute 'hi DiagnosticError guifg=#e33400'
     " warning
     execute 'hi CocWarningSign guifg=' . s:colors.yellow
     execute 'hi CocUnderlineWarning gui=underline guifg=' . s:colors.yellow
@@ -459,6 +463,12 @@ function! Light()
     execute 'hi CocHintSign guifg=' . s:colors.dark_purple
     execute 'hi CocHintHighlight gui=underline guifg=' . s:colors.dark_purple
     execute 'hi FgCocHintFloatBgCocFloating guifg=' . s:colors.dark_purple2
+    " coc menu
+    execute 'hi CocPumDetail guifg=' . s:colors.dark_purple2
+    " lualine git diff
+    execute 'hi LuaLineDiffAdd guifg=' . s:colors.green
+    execute 'hi LuaLineDiffChange guifg=' . s:colors.yellow
+    execute 'hi LuaLineDiffDelete guifg=' . s:colors.red
 
     " python
     execute 'hi @attribute.python guifg=' . s:colors.foreground
