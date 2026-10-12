@@ -431,6 +431,7 @@ function! Light()
     execute 'hi Exception guifg=' . s:colors.foreground
     execute 'hi Conditional guifg=' . s:colors.green
     execute 'hi Delimiter guifg=' . s:colors.green
+    execute 'hi Include guifg=' s:colors.purple2
 
     " test general
     execute 'hi @attribute guifg=' . s:colors.foreground
@@ -486,6 +487,10 @@ function! Light()
     execute 'hi @function.builtin.python guifg=' s:colors.orange
     execute 'hi @include.python guifg=' s:colors.purple2
     execute 'hi @constructor.python guifg=' s:colors.yellow
+
+    " rust
+    execute 'hi rustModPath guifg=' s:colors.foreground
+    execute 'hi rustFoldBraces guifg=' s:colors.dark_purple2
 
     " sql
     execute 'hi @keyword.sql guifg=' . s:colors.green
